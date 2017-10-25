@@ -155,7 +155,7 @@ layout: default
 	{% if post.link != null %}
 		<a href="{{post.link}}">[Read the original story...]</a>.
 		{% endif %}
-	{% include gpgc_comments.html post_title=post.title %}
+	
   
 	</article>
   {% endfor %}
@@ -205,7 +205,7 @@ layout: default
 					{% if post.link != null %}
 		               <a href="{{post.link}}">[Read the original story...]</a>.
 					{% endif %}
-  
+				
 	</article>
   {% endfor %}
 
@@ -262,6 +262,7 @@ layout: default
   {% endfor %}
 
 </div>
+{% include gpgc_comments.html post_title=post.title %}
 <!-- MailChimp--> 
 {% include email.html %}
 <!-- MailChimp-->
