@@ -1,0 +1,120 @@
+---
+title: Archive of Things
+layout: default
+---
+
+<h5 style="text-align: center;">Archive of The Tldr </h5>
+
+<div class="posts">
+   <div>
+     <h6>
+	   <h2 style="text-align: center;" class="post-heading">Headlines News</h2>
+	 </h6>
+</div>
+  {% for post in site.categories.posts%}
+    <article class="post">
+    
+   
+    <h6 class="post-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}:
+      <span class="post-small">{{ post.description }}</span></a>
+    </h6>
+	  
+    <time datetime="{{ post.last_modified | date_to_xmlschema }}" class="post-date">
+       {{ post.date | date: "%m/%d/%Y" }}
+	{% if post.last_modified %}
+    <small><em>Updated: {{ post.last_modified | date: "%m/%d/%Y %r %Z"}} 
+    </em></small>
+	{%endif%}
+  </time>
+ 
+  </article>
+  {% endfor %} 
+ </div>
+
+
+
+
+
+  
+<div class="movements">
+  <div>
+     <h6>
+        <div><h2 style="text-align: center;" class="post-heading">Movements News</h2></div>	   
+	 </h6>
+   </div>
+  {% for post in site.categories.movements %}
+  <article class="post">
+    
+    <h6 class="post-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}:
+      <span class="post-small">{{ post.description }}</span></a>
+    </h6>
+    <time datetime="{{ post.last_modified | date_to_xmlschema }}" class="post-date">
+       {{ post.date | date: "%m/%d/%Y" }}
+    {% if post.last_modified %}<small><em>Updated: {{ post.last_modified | date: "%m/%d/%Y %r %Z"}} 
+    </em></small>{% endif %}
+  </time>
+ 
+   </article> 
+	
+  {% endfor %}
+</div>
+  
+  
+  
+  
+  
+  
+<div class="diractions">
+  <div>
+     <h6>
+	   <h2 style="text-align: center;" class="post-heading">Direct Actions News</h2>
+	 </h6>
+  </div>
+  {% for post in site.categories.diractions %}
+   <article class="post">
+      
+	  <h6 class="post-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}:
+      <span class="post-small">{{ post.description }}</span></a>
+    </h6>
+    <time datetime="{{ post.last_modified | date_to_xmlschema }}" class="post-date">
+       {{ post.date | date: "%m/%d/%Y" }}
+    <small><em>Updated: {{ post.last_modified | date: "%m/%d/%Y %r %Z"}} 
+    </em></small>
+  </time>
+   
+  </article>
+  {% endfor %}
+</div>
+  
+  
+<div class="opinions">
+   <div>
+     <h6>
+	   <h2 style="text-align: center;" class="post-heading">Perspective News</h2>
+	 </h6>
+   </div>
+	   
+  {% for post in site.categories.opinions %}
+   <article class="post">
+       
+      <h6 class="post-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}:
+      <span class="post-small">{{ post.description }}</span></a>
+    </h6>
+    <time datetime="{{ post.last_modified | date_to_xmlschema }}" class="post-date">
+       {{ post.date | date: "%m/%d/%Y" }}
+    {% if post.last_modified %}<small><em>Updated: {{ post.last_modified | date: "%m/%d/%Y %r %Z"}} 
+    </em></small>{% endif %}
+  </time>
+   
+  </article>
+  {% endfor %}
+    
+</div> 

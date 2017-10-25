@@ -1,0 +1,29 @@
+---
+title: Archive of All Direction Action Stories
+layout: default
+---
+
+
+<h5 style="text-align: center;">Archive of All Direction Action News</h5>
+
+<div class="posts">
+   
+  {% for post in site.categories.actions %}
+  <article class="post">
+      <h6 class="post-title" id="{{post.title}}">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}:
+      <span class="post-small">{{ post.description }}</span></a>
+    </h6>
+    <div class="post-date">
+      <time datetime="{% if post.last_modified %}{{ post.last_modified | date_to_xmlschema }}{% endif %}">
+        {{ post.date | date: "%-m/%-d/%Y" }} 
+      </time>
+      {% if post.last_modified %}<small><em>Updated: {{ post.last_modified | date: "%m/%d/%Y %r %Z"}} 
+    </em></small>{% endif %}
+    </div>    
+	
+  </article>
+ {% endfor %} 
+
+</div>

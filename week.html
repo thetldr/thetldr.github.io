@@ -1,0 +1,266 @@
+---
+title: Tldr Weekly Digest
+layout: default
+---
+
+
+
+<div class="postexcerpt">
+  
+    <article class="post">
+		<em>The Week</em>
+		{% assign weeklycount = 7 %}{% assign postcount = weeklycount %}{% assign movcount = weeklycount %}{% assign opncount = weeklycount %}{% assign actcount = weeklycount %}
+  {% include toc.html %}
+        <dl> 
+		<dt> Latest News</dt>
+	   {% for post in site.categories.posts limit:weeklycount %}
+			 
+			
+			
+				<dd>{{ post.title }}: {{post.description}}</dd>
+			
+			
+		{% endfor %}
+		<dt> Movement News </dt>
+		{% for post in site.categories.movements limit:weeklycount %}
+			 
+			
+				 <dd>{{ post.title }}: {{post.description}}</dd>
+			
+			
+		{% endfor %}
+		<dt> Opinions </dt>
+		{% for post in site.categories.opinions limit:weeklycount %}
+			 
+			
+				 <dd>{{ post.title }}: {{post.description}}</dd>
+			
+		
+		{% endfor %}
+		<dt>Direct Actions</dt>
+		{% for post in site.categories.actions limit:weeklycount %}
+			
+			
+				 <dd>{{ post.title }}: {{post.description}}</dd>
+			
+			
+		{% endfor %}
+		
+		</dl>
+	</article>
+	
+</div>
+
+
+<div>
+	<h6>
+		<div>
+			<h4 style="text-align: center;"class="post-heading">
+				<a href="{{ site.baseurl }}/posts"> Latest News...  </a>
+			</h4>
+		</div>
+	</h6>
+</div>
+<div class="Latests">
+   
+  {% for post in site.categories.posts limit:weeklycount %}
+  
+	<article class="post">
+		<h6 class="post-title" id="{{post.title}}">
+			<a href="{{ site.baseurl }}{{ post.url }}">
+		{{ post.title }}:
+	  
+				<span class="post-small">{{ post.description }}</span>
+			</a>
+		</h6>
+		<div>
+	{% assign author = site.authors | where: 'title', post.author | first %}
+	{% if author %}
+	  
+			<div class="byline">By 
+				<a href="{{ author.url }}">{{ author.title }}</a>
+			</div>
+	{% endif %}
+	
+			<time datetime="{{ post.last_modified | date_to_xmlschema }}" class="post-date">
+	   {{ post.date | date: "%m/%d/%Y" }}
+	
+				<small>
+					<div>
+						<em>Updated: {{ post.last_modified | date: "%m/%d/%Y %r %Z"}}</em>
+					</div>
+				</small>
+				<div>
+					<a class="fa fa-twitter" aria-hilien="true" class="twitter-share-button" href="https://twitter.com/intent/tweet?url={{site.baseurl}}{{post.url}}&hashtags={{post.title}}">Tweet</a> | 
+			  
+					<a class="fa fa-edit" aria-hilien="true" href="{{site.edit_path}}{{ post.path }}" target="_blank">Edit</a>
+				</div>
+			</time>
+		</div>
+ 
+	{{ post.content | extlinks }}
+					{% if post.link != null %}
+		               <a href="{{post.link}}">Read from the original source</a>.
+					{% endif %}
+  
+	</article>
+  {% endfor %} 
+
+</div>
+<div>
+	<h6>
+		<div>
+			<h4 style="text-align: center;"class="post-heading">
+				<a href="{{ site.baseurl }}/movements"> Movements News...  </a>
+			</h4>
+		</div>
+	</h6>
+</div>
+<div class="movements">
+  
+  {% for post in site.categories.movements limit:weeklycount %}
+   
+	<article class="post">
+		<h6 class="post-title" id="{{post.title}}">
+			<a href="{{ site.baseurl }}{{ post.url }}">
+		{{ post.title }}:
+	  
+				<span class="post-small">{{ post.description }}</span>
+			</a>
+		</h6>
+		<div>
+	{% assign author = site.authors | where: 'title', post.author | first %}
+	{% if author %}
+	  
+			<div class="byline">
+				<a href="{{ author.url }}">{{ author.title }}</a>
+			</div>
+	{% endif %}
+	
+			<time datetime="{{ post.last_modified | date_to_xmlschema }}" class="post-date">
+	   {{ post.date | date: "%m/%d/%Y" }}
+		
+				<small>
+					<div>
+						<em>Updated: {{ post.last_modified | date: "%m/%d/%Y %r %Z"}} </em>
+					</div>
+				</small>
+				<div>
+					{% assign article_url = post.url %}
+							{% include share.html %}
+				</div>
+			</time>
+		</div>
+	{{ post.content | extlinks }}
+					{% if post.link != null %}
+		               <a href="{{post.link}}">Read from the original source</a>.
+					{% endif %}
+  
+	</article>
+  {% endfor %}
+ 
+</div>
+<div>
+	<h4 style="text-align: center;"class="post-heading">
+		<a href="{{ site.baseurl }}/opinions"> Opinions...  </a>
+	</h4>
+</div>
+<div class="opinions">  
+  {% for post in site.categories.opinions limit:weeklycount %}
+  
+	<article class="post">
+		<h6 class="post-title" id="{{post.title}}">
+			<a href="{{ site.baseurl }}{{ post.url }}">
+		{{ post.title }}:
+	  
+				<span class="post-small">{{ post.description }}</span>
+			</a>
+		</h6>
+		<div>
+	{% assign author = site.authors | where: 'title', post.author | first %}
+	{% if author %}
+	  
+			<div class="byline">
+				<a href="{{ author.url }}">{{ author.title }}</a>
+			</div>
+	{% endif %}
+	
+	
+			<time datetime="{{ post.last_modified | date_to_xmlschema }}" class="post-date">
+	   {{ post.date | date: "%m/%d/%Y" }}
+	
+				<small>
+					<div>
+						<em>Updated: {{ post.last_modified | date: "%m/%d/%Y %r %Z"}} </em>
+					</div>
+				</small>
+				<div>
+					{% assign article_url = post.url %}
+							{% include share.html %}
+				</div>
+			</time>
+		</div>
+	{{ post.content | extlinks }}
+					{% if post.link != null %}
+		               <a href="{{post.link}}">Read from the original source</a>.
+					{% endif %}
+  
+	</article>
+  {% endfor %}
+
+</div>
+
+
+<div>
+	<h4 style="text-align: center;"class="post-heading">
+		<a href="{{ site.baseurl }}/actions"> Direct Action News...  </a>
+	</h4>
+</div>
+<div class="actions">
+  
+  {% for post in site.categories.actions limit:weeklycount %}
+  
+	<article class="post">
+		<h6 class="post-title" id="{{post.title}}">
+			<a href="{{ site.baseurl }}{{ post.url }}">
+		{{ post.title }}:
+	  
+				<span class="post-small">{{ post.description }}</span>
+			</a>
+		</h6>
+		<div>
+	{% assign author = site.authors | where: 'title', post.author | first %}
+	{% if author %}
+	  
+			<div class="byline">
+				<a href="{{ author.url }}">{{ author.title }}</a>
+			</div>
+	{% endif %}
+	
+	
+			<time datetime="{{ post.last_modified | date_to_xmlschema }}" class="post-date">
+	   {{ post.date | date: "%m/%d/%Y" }}
+	
+				<small>
+					<div>
+						<em>Updated: {{ post.last_modified | date: "%m/%d/%Y %r %Z"}} </em>
+					</div>
+				</small>
+				<div>
+					{% assign article_url = post.url %}
+							{% include share.html %}
+				</div>
+			</time>
+		</div>
+	{{ post.content | extlinks }}
+					{% if post.link != null %}
+		               <a href="{{post.link}}">Read from the original source</a>.
+					{% endif %}
+  
+	</article>
+  {% endfor %}
+
+</div>
+<!-- MailChimp--> 
+{% include email.html %}
+<!-- MailChimp-->

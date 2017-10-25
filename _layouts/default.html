@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+   <body class="mdl-tldr mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	
+		<header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+			<div class="mdl-layout--large-screen-only mdl-layout__header-row">
+			</div>
+			       
+			<div style="width: 100%;">
+			  <i class="mdl-mdl-color--primary-dark">
+				<a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a> Leftist media roundup
+				</i>
+			 
+             
+			<div class="tldr-search">
+			  <div class="outer-wrapper">
+				<div class="input-wrapper">
+				  <i class="fa fa-search fa-css" aria-hidden="true"></i>
+				  <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search tldr..." />
+				</div>
+			  </div>
+			</div>
+			
+       
+            <!-- Left aligned menu below button -->
+					<button id="demo-menu-lower-left"
+							class="mdl-button mdl-js-button mdl-button--icon">
+					  <i class="material-icons">more_vert</i>
+					</button>
+
+					<ul class="mdl-menu mdl-menu--right mdl-js-menu mdl-js-ripple-effect"
+						for="demo-menu-lower-left" style="position: relative;margin: auto;width: 100%;">
+					  <li class="mdl-menu__item">Some Action</li>
+					  <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
+					  <li disabled class="mdl-menu__item">Disabled Action</li>
+					  <li class="mdl-menu__item">Yet Another Action</li>
+					</ul>
+			  
+			</div>
+			<div class="mdl-layout--large-screen-only mdl-layout__header-row">
+			</div>
+			<div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+			  <a href="{{ site.baseurl }}/index.html#toc" class="mdl-layout__tab is-active">tldr</a>
+			  <a href="{{ site.baseurl }}/posts" class="mdl-layout__tab">News</a>
+			  <a href="{{ site.baseurl }}/movements" class="mdl-layout__tab">Movements</a>
+			  <a href="{{ site.baseurl }}/opinions" class="mdl-layout__tab">Perspectives</a>
+			  <a href="{{ site.baseurl }}/actions" class="mdl-layout__tab">Actions</a>
+			  <a href="{{ site.baseurl }}/week" class="mdl-layout__tab">Weekly Digest</a>
+			  
+			</div>
+			<div class="wig-search">
+			  <div class="outer-wrapper">
+				<div class="input-wrapper">
+				  <i class="fa fa-search fa-css" aria-hidden="true"></i>
+				  <input type="text" class="algolia__input js-algolia__input" autocomplete="off" name="query" placeholder="Search wig..." />
+				</div>
+			  </div>
+			</div>
+        </header>
+	    <main class="mdl-layout__content">
+		    <!-- ALGOLIA -->
+			<div class="wig-search-results">
+			  <div class="algolia__search-content js-algolia__search-content">
+				<small>Search Results</small>
+				<div class="posts algolia__results"></div>
+			  </div>
+			</div>
+
+			<div class="algolia__initial-content js-algolia__initial-content">
+			  {{ content | extlinks }}</div>
+			<!-- END ALGOLIA -->
+      	                
+      </main>
+	  {%include foot.html %}
+	</div>
+    

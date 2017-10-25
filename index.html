@@ -1,0 +1,291 @@
+---
+title: The Tldr
+layout: default
+---
+<!-- MailChimp -->
+
+<div class="mdl-layout__tab-panel is-active" id="brief">
+    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="top">
+
+           <!-- <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Top News</h4>
+                
+				{% for post in site.categories.posts limit:dailycount %}
+							
+																	
+					<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}: {{post.description}}</a>								 														
+				{% endfor %}
+              </div>
+              <div class="mdl-card__actions">
+                <a href="{{ site.baseurl }}/posts" class="mdl-button">Read more tldr news</a>
+              </div>
+            </div>-->
+    </section>
+	<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="brief">
+	<div class="mdl-card mdl-cell mdl-cell--12-col">
+	  <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+		<h4 class="mdl-cell mdl-cell--12-col">Currently on The Tldr</h4>
+		<div class="postexcerpt">
+
+			<article class="post">
+			    {% assign dailycount = 1 %}{% assign postcount = dailycount %}{% assign movcount = dailycount %}{% assign opncount = dailycount %}{% assign actcount = dailycount %}
+				{% include toc.html %}															
+				<dl> 
+					<a href="#latests"><dt>News</dt></a>
+				   {% for post in site.categories.posts limit:dailycount %}
+					
+															
+						<dd>{{ post.title }}: {{post.description}}</dd>
+						 
+						
+						
+					{% endfor %}
+					<a href="#movements"><dt> Movements </dt></a>
+					{% for post in site.categories.movements limit:dailycount %}
+						 
+						<dd>{{ post.title }}: {{post.description}}</dd>
+						
+						
+					{% endfor %}
+					<a href="#opinions"><dt> Perspectives </dt></a>
+					{% for post in site.categories.opinions limit:dailycount %}
+						 
+						
+						 <dd>{{ post.title }}: {{post.description}}</dd>
+						
+					
+					{% endfor %}
+					<a href="#actions"><dt>Direct Actions</dt></a>
+					{% for post in site.categories.actions limit:dailycount %}
+						
+						
+						 <dd>{{ post.title }}: {{post.description}}</dd>
+						
+						
+					{% endfor %}
+									
+				</dl>
+			</article>
+
+		</div>
+	  </div>
+	  <div class="mdl-card__actions">
+		<a href="{{site.baseurl}}/allhome" class="mdl-button">Archive of The Tldr</a>
+	  </div>
+	</div>
+	</section>
+	<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="latests">
+		<div class="mdl-card mdl-cell mdl-cell--12-col">
+			<div class="mdl-card__supporting-text">
+				<h4>News</h4>
+				 {% for post in site.categories.posts limit:dailycount %}
+
+					<article class="post">
+						<h6 class="post-title" id="{{post.title}}">
+							<a href="{{ site.baseurl }}{{ post.url }}">
+						{{ post.title }}:
+					  
+								<span class="post-small">{{ post.description }}</span>
+							</a>
+						</h6>
+						<div>
+					{% assign author = site.authors | where: 'title', post.author | first %}
+					{% if author %}
+					  
+							<div class="byline">
+								<a href="{{ author.url }}">{{ author.title }}</a>
+							</div>
+					{% endif %}
+					
+					
+							<time datetime="{{ post.last_modified | date_to_xmlschema }}" class="post-date">
+					   {{ post.date | date: "%m/%d/%Y" }}
+					
+								<small>
+									<div>
+										<em>Updated: {{ post.last_modified | date: "%m/%d/%Y %r %Z"}} </em>
+									</div>
+								</small>
+								<div>
+									{% assign article_url = post.url %}
+							{% include share.html %}
+								</div>
+							</time>
+						</div>
+						{{ post.content | extlinks }}
+					{% if post.link != null %}
+		               <a href="{{post.link}}">[Read the original story...]</a>.
+					{% endif %}
+					
+				  
+						</article>
+					{% endfor %}
+			</div>
+			<div class="mdl-card__actions">
+				<a href="{{ site.baseurl }}/posts" class="mdl-button">Read more news</a>
+			</div>
+		</div>
+	
+	</section>
+	<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="movements">
+		<div class="mdl-card mdl-cell mdl-cell--12-col">
+			<div class="mdl-card__supporting-text">
+				<h4>Movements</h4>
+				{% for post in site.categories.movements limit:dailycount %}
+
+					<article class="post">
+						<h6 class="post-title" id="{{post.title}}">
+							<a href="{{ site.baseurl }}{{ post.url }}">
+						{{ post.title }}:
+					  
+								<span class="post-small">{{ post.description }}</span>
+							</a>
+						</h6>
+						<div>
+					{% assign author = site.authors | where: 'title', post.author | first %}
+					{% if author %}
+					  
+							<div class="byline">
+								<a href="{{ author.url }}">{{ author.title }}</a>
+							</div>
+					{% endif %}
+					
+							<time datetime="{{ post.last_modified | date_to_xmlschema }}" class="post-date">
+					   {{ post.date | date: "%m/%d/%Y" }}
+						
+								<small>
+									<div>
+										<em>Updated: {{ post.last_modified | date: "%m/%d/%Y %r %Z"}} </em>
+									</div>
+								</small>
+								<div>
+									{% assign article_url = post.url %}
+							{% include share.html %}
+								</div>
+							</time>
+						</div>
+					{{ post.content | extlinks }}
+					{% if post.link != null %}
+		               <a href="{{post.link}}">[Read the original story...]</a>.
+					{% endif %}
+					
+				  
+					</article>
+				  {% endfor %}
+			</div>
+			<div class="mdl-card__actions">
+				<a href="{{ site.baseurl }}/movements" class="mdl-button">Read our features</a>
+			</div>
+		</div>
+	</section>
+	<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="opinions">
+	<div class="mdl-card mdl-cell mdl-cell--12-col">
+	  <div class="mdl-card__supporting-text">
+		<h4>Perspectives</h4>
+		{% for post in site.categories.opinions limit:dailycount %}
+
+			<article class="post">
+				<h6 class="post-title" id="{{post.title}}">
+					<a href="{{ site.baseurl }}{{ post.url }}">
+				{{ post.title }}:
+			  
+						<span class="post-small">{{ post.description }}</span>
+					</a>
+				</h6>
+				<div>
+			{% assign author = site.authors | where: 'title', post.author | first %}
+			{% if author %}
+			  
+					<div class="byline">
+						<a href="{{ author.url }}">{{ author.title }}</a>
+					</div>
+			{% endif %}
+			
+			
+					<time datetime="{{ post.last_modified | date_to_xmlschema }}" class="post-date">
+			   {{ post.date | date: "%m/%d/%Y" }}
+			
+						<small>
+							<div>
+								<em>Updated: {{ post.last_modified | date: "%m/%d/%Y %r %Z"}} </em>
+							</div>
+						</small>
+						<div>
+							{% assign article_url = post.url %}
+							{% include share.html %}
+						</div>
+					</time>
+				</div>
+			{{ post.content | extlinks }}
+					{% if post.link != null %}
+		               <a href="{{post.link}}">[Read the original story...]</a>.
+					{% endif %}
+					
+			</article>
+		   {% endfor %}
+		</div>
+	  <div class="mdl-card__actions">
+		<a href="{{ site.baseurl }}/opinions" class="mdl-button">Read more perspectives</a>
+	  </div>
+	</div>
+	</section>
+	<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="actions">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text">
+                <h4>Direct Actions</h4>
+				{% for post in site.categories.actions limit:dailycount %}
+  
+					<article class="post">
+						<h6 class="post-title" id="{{post.title}}">
+							<a href="{{ site.baseurl }}{{ post.url }}">
+						{{ post.title }}:
+					  
+								<span class="post-small">{{ post.description }}</span>
+							</a>
+						</h6>
+						<div>
+					{% assign author = site.authors | where: 'title', post.author | first %}
+					{% if author %}
+					  
+							<div class="byline">
+								<a href="{{ author.url }}">{{ author.title }}</a>
+							</div>
+					{% endif %}
+					
+					
+							<time datetime="{{ post.last_modified | date_to_xmlschema }}" class="post-date">
+					   {{ post.date | date: "%m/%d/%Y" }}
+					
+								<small>
+									<div>
+										<em>Updated: {{ post.last_modified | date: "%m/%d/%Y %r %Z"}} </em>
+									</div>
+								</small>
+								<div>
+									{% assign article_url = post.url %}
+							{% include share.html %}
+								</div>
+							</time>
+						</div>
+					{{ post.content | extlinks }}
+					{% if post.link != null %}
+		               <a href="{{post.link}}">[Read the original story...]</a>.
+					{% endif %}
+					{% if post.link != null %}
+		               <a href="{{post.link}}">[Read the original story...]</a>.
+					{% endif %}
+					{% if post.link != null %}
+		               <a href="{{post.link}}">[Read the original story...]</a>.
+					{% endif %}
+				  
+					</article>
+				  {% endfor %}
+                </div>
+              <div class="mdl-card__actions">
+                <a href="{{ site.baseurl }}/actions" class="mdl-button">Read more action stories</a>
+              </div>
+            </div>
+		</section>
+</div>
+

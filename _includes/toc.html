@@ -1,0 +1,41 @@
+
+<section class ="brief-section" id="toc">
+	<h5> Latest In: </h5>
+	<nav class="section-content">
+			<ul>
+				
+				<i class="posts">
+				   {% if postcount %}
+						<h5>News</h5>
+						{% for post in site.categories.posts  limit:postcount %}
+						<li><a href="#{{post.title}}"> {{post.title}}: {{post.description}} </a></li>
+						{% endfor %}
+					{% endif %}
+				</i>
+				<i class="movements">
+					{% if movcount %}
+						<h5> Movements </h5>
+						{% for post in site.categories.movements  limit:movcount %}
+							<li><a href="#{{post.title}}"> {{post.title}}: {{post.description}} </a></li>
+						{% endfor %}
+					{% endif %}
+				</i>
+				 <i class="opinions">
+				    {% if opncount %}
+						<h5>Perspectives</h5>
+						{% for post in site.categories.opinions  limit:opncount %}
+							<li><a href="#{{post.title}}"> {{post.title}}: {{post.description}} </a></li>
+						{% endfor %}
+					{% endif %}
+				</i>
+				<i class="actions">
+				    {% if actcount %}
+						<h5>Actions</h5>
+						{% for post in site.categories.actions  limit:actcount %}
+							<li><a href="#{{post.title}}"> {{post.title}}: {{post.description}} </a></li>
+						{% endfor %}
+					{% endif %}
+				</i>
+			</ul>
+  
+</section>
