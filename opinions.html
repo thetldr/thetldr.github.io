@@ -30,14 +30,14 @@ layout: default
 							{% assign article_url = post.url %}
 							{% include share.html %}
 						</time>
-					   
+						
 					   
 					</div>
 					{{ post.content | extlinks }}
 					{% if post.link != null %}
 		               <a href="{{post.link}}">[Read the original story...]</a>.
 					{% endif %}
-		
+					{% include gpgc_comments.html post_title=post.title %}
 							
 				</article>
 				{% endfor %}
