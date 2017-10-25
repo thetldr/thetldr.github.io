@@ -7,7 +7,7 @@ Author: Admin
 email: aa@aa.org
 link: https://fake.link
 layout: post
-category: posts
+category: [movements, posts, actions, opinions]
 description: Tldr Digest
 
 ---

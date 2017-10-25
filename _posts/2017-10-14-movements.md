@@ -17,7 +17,7 @@ ideology: progressive/liberterian
 achievement: TBD
 hashtags: #blacklivematter #blm
 layout: post
-category: [movements, posts]
+category: [movements, posts, actions, opinions]
 description: 
 
 ---
