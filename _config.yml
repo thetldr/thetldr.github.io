@@ -82,7 +82,7 @@ defaults:
     email: 
     metatags: noindex, follow
     sitemap: false
-permalink: pretty
+permalink: "/:year/:month/:day/:title/"
 name: The Tldr
 tagline:  A tldr digest of leftist media and politics
 description: A roundup tldr news, stories, profiles and perspective of the Left and the Progressive.
