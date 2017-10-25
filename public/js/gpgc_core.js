@@ -206,9 +206,9 @@ function onAuthenticateUserFailed() {
   var elementsToDisable = [ SubmitButton ];
   updateElements(elementsToShow, elementsToHide, elementsToEnable, elementsToDisable);
   updateCommenterInformation({
-    login: "You",
-    html_url: "https://github.com/wireddown/ghpages-ghcomments",
-    avatar_url: "https://raw.githubusercontent.com/wireddown/ghpages-ghcomments/gh-pages/public/apple-touch-icon-precomposed.png"
+    login: "You are not logged in.",
+    html_url: "https://github.com/thetldr/thetldr.github.io",
+    avatar_url: "https://raw.githubusercontent.com/thetldr/thetldr.github.io/master/public/favicon.ico"
   });
 }
 

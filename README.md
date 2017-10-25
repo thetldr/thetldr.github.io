@@ -14,7 +14,8 @@ Project forked from [wtfjht](https://github.com/mkiser/WTFJHT/).
   **TODO:**
   
       
-       * Continuously edit README.md
+       * Design a Tldr logo. The current one while interesting is neither original nor unique :smile:
+	   * Continuously edit README.md
        * Create wiki page for sources/publications
        * Create project road map wiki page
        * Start publishing stories.
