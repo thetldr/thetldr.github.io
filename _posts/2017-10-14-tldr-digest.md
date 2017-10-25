@@ -5,7 +5,7 @@ When: 2017-10-14 00:00:00 -08:00
 publication: Tldr Digest
 Author: Admin
 email: aa@aa.org
-link: http://ldr.github.io/posts
+link: https://fake.link
 layout: post
 category: posts
 description: Tldr Digest
