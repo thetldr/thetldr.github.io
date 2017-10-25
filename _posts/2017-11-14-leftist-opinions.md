@@ -9,7 +9,7 @@ url: https://ldr.github.io
 publisher: The What Is Good!
 tipster:
 link: https://fake.link
-category: [opinions, posts]
+category: [opinions]
 layout: post
 description: A tldr of timely opinion pieces from leftist/progressive writers
 

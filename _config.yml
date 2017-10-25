@@ -7,16 +7,16 @@ collections:
     output: true
   actions:
     title: actions
-    output: true
+    output: false
   posts:
     title: Posts
     output: true
   movements:
     title: Movements
-    output: true
+    output: false
   opinions:
     title: Opinions
-    output: true
+    output: false
   drafts:
     title: Drafts
     output: true
