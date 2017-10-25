@@ -1,5 +1,5 @@
 repo_owner: thetldr
-repo_name: tldr.github.io
+repo_name: thetldr.github.io
 disabled: false
 use_show_action: false
 label_name: Post Comments
@@ -7,5 +7,5 @@ label_color: 666666
 github_application:
   client_id: dc4c622a819b776da8ee
   code_authenticator:  https://tldr1.herokuapp.com/authenticate/
-  callback_url: https://tldr.github.io/public/html/gpgc_redirect/index.html
+  callback_url: https://thetldr.github.io/public/html/gpgc_redirect/index.html
 enable_diagnostics: true
